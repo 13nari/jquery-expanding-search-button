@@ -14,22 +14,40 @@ body{
     width: 80px;
     height: 80px;
     background: #ffffff;
-    box-shadow: 0 5px 20px rgba(red, green, blue, 0,5);
+    box-shadow: 0 5px 20px rgba(red, green, blue, 0.5);
     border-radius: 4px;
     transition: width 0.5s;
+    overflow: hidden;
 }
 
 .search.active{
     width: 600px;
 }
 
-.icon{
-    width: 60px;
+.search.active .icon{
+    background: #ff355a;
+}
+
+.search input{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 90px);
     height: 60px;
-    background: #ffffff;
+    border: none;
+    outline: none;
+    font-size: 36px;
+    padding: 0 10px;
+    color: #666666;
+}
+
+.icon{
     position: absolute;
     top: 10px;
     right: 10px;
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
     cursor: pointer;
     transition: 0.5s;
     border-radius: 4px;
@@ -48,6 +66,21 @@ body{
     transition: 0.5s;
 }
 
+.search.active .icon:before{
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 13px;
+    width: 18px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    border-right: 2px solid #ffffff;
+    border-radius: 0;
+    transition: 0.5s;
+    transform: rotate(45deg);
+}
+
 .icon:after{
     content: '';
     position: absolute;
@@ -60,4 +93,19 @@ body{
     border-radius: 0;
     transform: rotate(-45deg);
     transition: 0.5s;
+}
+
+.search.active .icon:after{
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 13px;
+    width: 18px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    border-right: 2px solid #ffffff;
+    border-radius: 0;
+    transition: 0.5s;
+    transform: rotate(-45deg);
 }
